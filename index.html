@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EternaWatches - Login / Signup</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0a0f24;
+    color: white;
+}
+
+@media (max-width: 600px){
+    body {
+        background-color: white;
+    }
+}
+
+header { 
+    background: #0a0f24;
+    padding: 15px;
+    border-bottom: 2px solid #d4af37;
+    border-top: 2px solid #d4af37;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    color: #d4af37;
+    font-size: 32px;
+    letter-spacing: 2px;
+}
+
+#title {
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block; 
+}
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: white;
+    color: #0a0f24; 
+    width: 90%;
+    max-width: 450px;
+    margin: 50px auto; 
+    padding: 30px;
+    border-radius: 10px;
+}
+
+h2 {
+    text-align: center;
+    color: #0a0f24;
+    margin-bottom: 20px;
+}
+
+input {
+       width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #d4af37;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #0a0f24;
+    border: none;
+    color: white;
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background: #d4af37;
+    color: #0a0f24;
+}
+
+.toggle-link {
+    margin-top: 20px;
+    text-align: center;
+    cursor: pointer;
+    color: #0a0f24;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.toggle-link:hover {
+    color: #d4af37;
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid #d4af37;
+    border-bottom: 2px solid #d4af37;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #bbb;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1 id="title">EternaSmartWatches</h1>
+</header>
+
+<div class="container" id="loginBox" style="display: block;">
+<h2>Login to EternaWatches ⌚</h2>
+<input type="text" placeholder="Username" id="loginUser">
+<input type="password" placeholder="Password" id="loginPass">
+<button onclick="goHome()">Login</button>
+
+<p class="toggle-link" onclick="showSignup()">Don't have an account? Sign Up</p>
+</div>
+
+<div class="container" id="signupBox" style="display:none;">
+<h2>Sign Up for EternaWatches ✍️</h2>
+<input type="text" placeholder="Full Name" id="signupName">
+<input type="email" placeholder="Email" id="signupEmail">
+<input type="password" placeholder="Password" id="signupPass">
+<input type="text" placeholder="Phone Number" id="signupPhone">
+<button onclick="registerUser()">Register</button>
+
+<p class="toggle-link" onclick="showLogin()">Already have an account? Login</p>
+</div>
+
+<footer>
+<p>Contact: +92 330 0000000 | info@eternawatches.com</p>
+<p>&copy; 2025 EternaWatches. Islamabad, Pakistan</p>
+</footer>
+
+<script>
+function goHome(){
+    if (
+        document.getElementById("loginUser").value === "" ||
+        document.getElementById("loginPass").value === ""
+    ) {
+        alert("Username and Password are required!");
+        return;
+    }
+
+    window.location.href = "home.html";
+}
+function registerUser() {
+    if (
+        document.getElementById("signupName").value === "" ||
+        document.getElementById("signupEmail").value === "" ||
+        document.getElementById("signupPass").value === "" ||
+        document.getElementById("signupPhone").value === ""
+    ) {
+        alert("Please fill all fields!");
+        return;
+    }
+    window.location.href = "home.html";
+}
+
+function showSignup() {
+    document.getElementById("loginBox").style.display = "none";
+    document.getElementById("signupBox").style.display = "block";
+}
+function showLogin() {
+    document.getElementById("signupBox").style.display = "none";
+    document.getElementById("loginBox").style.display = "block";
+}
+</script>
+
+</body>
+</html>

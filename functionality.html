@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EternaWatches - Product Details</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #f4f4f4;
+    color: #0a0f24;
+}
+header {
+    background: #0a0f24;
+    padding: 15px 50px;
+    border-bottom: 3px solid #d4af37;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    color: #d4af37;
+    font-size: 28px;
+    font-weight: bold;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+}
+nav a:hover { color: #d4af37; }
+
+.product-box {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.product-box img {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.details h2 { font-size: 26px; }
+.price { color: #d4af37; font-weight: bold; font-size: 20px; }
+.btn {
+    display: inline-block;
+    background: #0a0f24;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-right: 10px;
+}
+.btn:hover { background: #d4af37; color: black; }
+
+footer {
+    background: #0a0f24;
+    color: #bbb;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 2px solid #d4af37;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">EternaWatches</div>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About us</a>
+        <a href="contact.html">Contact us</a>
+    </nav>
+</header>
+
+<div id="content"></div>
+
+<footer>
+    <p>Contact: ‪+92 330 0000000‬ | info@eternawatches.com</p>
+</footer>
+
+<script>
+const products = {
+    t900: { name: "T900 Ultra", price: "Rs. 2300", img: "pic-1.jpg", description: "Premium smartwatch with HD display and health sensors." },
+    y08: { name: "Y08 Smartwatch", price: "Rs. 2300", img: "pic-2.jpg", description: "Smooth UI, heart rate sensor, and sports modes." },
+    n736: { name: "N736 Smartwatch", price: "Rs. 2300", img: "pic-3.jpg", description: "LCD display, Bluetooth calling, fitness tracking." },
+    x10: { name: "X10 Smartwatch", price: "Rs. 2300", img: "pic-4.jpg", description: "Full-screen display and sports modes." },
+    w27: { name: "W27 Pro", price: "Rs. 2300", img: "pic-5.jpg", description: "Stylish design and smooth UI." },
+    m16: { name: "M16 Smartwatch", price: "Rs. 2300", img: "pic-6.jpg", description: "Large display and long-lasting battery." }
+};
+
+const id = new URLSearchParams(window.location.search).get("product");
+const box = document.getElementById("content");
+
+if (products[id]) {
+    const p = products[id];
+    box.innerHTML = `
+        <div class="product-box">
+            <img src="${p.img}" alt="${p.name}">
+            <div class="details">
+                <h2>${p.name}</h2>
+                <p>${p.description}</p>
+                <p class="price">${p.price}</p>
+                <a class="btn" href="https://wa.me/923355898335?text=I'm%20interested%20in%20${p.name}">Buy Now</a>
+                <a class="btn" href="products.html">Back</a>
+            </div>
+        </div>
+    `;
+} else {
+    box.innerHTML = `
+        <h2 style="text-align:center; color:red; margin-top:40px;">
+            Error: Product not found!
+        </h2>
+    `;
+}
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EternaSmart - Smartwatches Collection</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4; 
+}
+
+header {
+    background: #0a0f24;
+    padding: 15px 50px;
+    border-bottom: 3px solid #d4af37;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #d4af37;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #d4af37; 
+}
+
+.hero {
+    background: url(pic-6.jpg) center/cover; 
+    background-color: #0a0f24; 
+    color: white;
+    height: 400px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: #ffffff; 
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 600px;
+}
+
+.hero button {
+    padding: 12px 30px;
+    background: #d4af37;
+    border: none;
+    color: #0a0f24;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.hero button:hover {
+    background: #ffffff;
+}
+
+.featured {
+    padding: 40px 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.featured h2 {
+    font-size: 30px;
+    color: #0a0f24;
+    margin-bottom: 30px;
+}
+
+.product-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; 
+    gap: 20px;
+}
+
+.product-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 280px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product-card:hover {
+    background-color: #f0f4ff;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.product-btn {
+    cursor: pointer;
+    background: #0a0f24;
+    color: white;
+    padding: 10px;
+    margin-top: 5px;
+    width: 100%;
+    border: none;
+}
+
+.product-card h3 {
+    margin: 0 0 10px 0;
+    color: #0a0f24;
+}
+
+.product-card p {
+    color: #d4af37;
+    font-weight: bold;
+}
+
+footer {
+    background: #0a0f24;
+    color: #bbb;
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid #d4af37;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    nav a {
+        margin: 10px;
+        display: inline-block;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero {
+        height: auto;
+        padding: 60px 20px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">EternaSmartWatches</div>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About us</a>
+        <a href="contact.html">Contact us</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <h1>Smartwatches for Every Lifestyle</h1>
+    <p>Discover our exclusive smartwatch collection with features for health, fitness, and style.</p>
+    <button onclick="window.location.href='products.html'">SHOP THE COLLECTION</button>
+</div>
+
+<div class="featured">
+    <h2>Featured Smartwatches</h2>
+    <div class="product-grid">
+        
+        <div class="product-card">
+            <img src="pic-1.jpg" alt="T900 Ultra">
+            <h3>T900 Ultra</h3>
+            <p>$2,300</p>
+            <button class="product-btn" onclick="window.location.href='functionality.html?product=t900'">
+                View Details
+            </button>
+
+        </div>
+        
+        <div class="product-card">
+            <img src="pic-2.jpg" alt="Y08 Smartwatch">
+            <h3>Y08 Smartwatch</h3>
+            <p>$2,300</p>
+            <button class="product-btn" onclick="window.location.href='functionality.html?product=y08'">
+                View Details
+            </button>
+
+        </div>
+        
+        <div class="product-card">
+            <img src="pic-3.jpg" alt="N736 Smartwatch">
+            <h3>N736 Smartwatch</h3>
+            <p>$2,300</p>
+          <button class="product-btn" onclick="window.location.href='functionality.html?product=n736'">
+                View Details
+            </button>
+
+        </div>
+        
+    </div>
+</div>
+
+<footer>
+    <p>Contact: +92 3355898335 | info@eternawatches.com</p>
+    <p>&copy; 2025 EternaSmart. Islamabad, Pakistan</p>
+</footer>
+
+</body>
+</html>
